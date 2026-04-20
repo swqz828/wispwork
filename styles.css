@@ -1,0 +1,33 @@
+* {
+  line-height: normal;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+
+body {
+    margin: 0 10%;
+}
+
+h1, h2 {
+    font-family: 'Elsie Swash Caps', serif; 
+    font-weight: 900; 
+}
+
+
+h1 {
+    font-size: 8em;
+}
+
+h2 {
+    font-size: 4em;
+}
+
+h4 {
+    font-family: serif;
+    font-size: 2.5em;
+}
+
+p {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.25em;
+}
