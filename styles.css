@@ -2,10 +2,76 @@
   line-height: normal;
   letter-spacing: normal;
   word-spacing: normal;
+  background-color: #070127;
 }
 
 body {
-    margin: 0 10%;
+    margin: 0%;
+    color: #f5f3f0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+section {
+    height: 100vh; 
+    margin: 5% 0;
+}
+
+.content {
+    width: 80%; 
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.sticky {
+    position: fixed;
+    top: 2rem;
+    right: 2rem; 
+    left: unset; 
+    
+    /**controls stacking order -- appear on top of most things (max: 1000)**/
+    z-index: 999;
+}
+
+.center {
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left {
+    display: block; 
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.right {
+    display: block; 
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.two-column7 {
+    display: grid; 
+    grid-template-columns: 70% auto;
+}
+
+.two-column6 {
+    display: grid; 
+    grid-template-columns: 60% auto;
+}
+
+.two-column5 {
+    display: grid; 
+    grid-template-columns: 50% auto;
+    column-gap: 25px;
+}
+
+.three-by-three {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
 }
 
 h1, h2 {
