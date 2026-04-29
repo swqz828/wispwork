@@ -2,27 +2,65 @@
   line-height: normal;
   letter-spacing: normal;
   word-spacing: normal;
-  background-color: #070127;
 }
 
 body {
     margin: 0%;
     color: #f5f3f0;
+    background-color: #070127;
 }
 
 body::-webkit-scrollbar {
     display: none;
 }
 
-section {
-    height: 100vh; 
-    margin: 5% 0;
-}
 
 .content {
     width: 80%; 
+    height: 100%; 
     margin: 0 auto;
-    max-width: 1200px;
+
+    /**CHANGE LATER BECAUSE IT ONLY REALLY WORKS (PROPERLY) FOR A CERTAIN SCREEN SIZE**/
+    max-width: 2560px; 
+}
+
+section {
+    height: 100vh; 
+}
+
+#landing {
+    background-image: url('placeholder-bg/landing.webp');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+#home {
+    background-image: url('placeholder-bg/home.webp');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+#about {
+    background-image: url('placeholder-bg/about.webp');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+#projects {
+    background-image: url('placeholder-bg/projects.webp');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+#contact {
+    background-image: url('placeholder-bg/contact.webp');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
 .sticky {
@@ -54,19 +92,21 @@ section {
 }
 
 .two-column7 {
+    margin: 0 10%;
     display: grid; 
     grid-template-columns: 70% auto;
 }
 
 .two-column6 {
+    margin: 0 10%;
     display: grid; 
     grid-template-columns: 60% auto;
 }
 
 .two-column5 {
+    margin: 0 10%;
     display: grid; 
     grid-template-columns: 50% auto;
-    column-gap: 25px;
 }
 
 .three-by-three {
@@ -74,11 +114,33 @@ section {
     grid-template-columns: repeat(3, 1fr); 
 }
 
+#projects {
+    display: flex;
+    flex-direction: column;
+
+    /**override section rule**/
+    height: 100vh; 
+    margin: 0; 
+    box-sizing: border-box; 
+}
+
+.project-scroll {
+    overflow-y: scroll; 
+
+    /**takes up leftover height after header**/
+    flex: 1; 
+
+    min-height: 0;
+}
+
+.project-scroll::-webkit-scrollbar {
+    display: none;
+}
+
 h1, h2 {
     font-family: 'Elsie Swash Caps', serif; 
     font-weight: 900; 
 }
-
 
 h1 {
     font-size: 8em;
