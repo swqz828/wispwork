@@ -1,7 +1,8 @@
 * {
-  line-height: normal;
-  letter-spacing: normal;
-  word-spacing: normal;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: 1.25; 
+    margin: 0;
 }
 
 body {
@@ -14,7 +15,6 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-
 .content {
     width: 80%; 
     height: 100%; 
@@ -26,53 +26,82 @@ body::-webkit-scrollbar {
 
 section {
     height: 100vh; 
-}
-
-#landing {
-    background-image: url('placeholder-bg/landing.webp');
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat;
 }
 
+#landing {
+    background-image: url('placeholder-bg/landing.webp');
+
+    position: relative; 
+    overflow: hidden;
+}
+
+#landing img {
+    position: absolute; 
+    bottom: 0; 
+    width: 100%;
+
+    /**controls stacking order -- appears below most things (max: 1000)**/
+    z-index: 1;
+}
+
+#home, #about, #contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+
 #home {
     background-image: url('placeholder-bg/home.webp');
-    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat; 
 }
 
-#about {
-    background-image: url('placeholder-bg/about.webp');
-    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat; 
-}
-
-#projects {
-    background-image: url('placeholder-bg/projects.webp');
-    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat; 
-}
-
-#contact {
-    background-image: url('placeholder-bg/contact.webp');
-    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat; 
-}
-
-.sticky {
+.sticky-home {
     position: fixed;
     top: 2rem;
     right: 2rem; 
     left: unset; 
     
-    /**controls stacking order -- appear on top of most things (max: 1000)**/
     z-index: 999;
 }
 
+#about {
+    background-image: url('placeholder-bg/about.webp');
+}
+
+#projects {
+    background-image: url('placeholder-bg/projects.webp');
+
+    padding: 10% 0 5% 0;
+
+    display: flex;
+    flex-direction: column;
+
+    /**override section rule**/
+    height: 100vh; 
+    margin: 0; 
+    box-sizing: border-box; 
+}
+
+.project-scroll {
+    overflow-y: scroll; 
+
+    min-height: 0;
+
+    /**takes up leftover height after header**/
+    flex: 1; 
+}
+
+.project-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+#contact {
+    background-image: url('placeholder-bg/contact.webp');
+}
+
+/**currently center is NOT used**/
 .center {
     display: block; 
     margin-left: auto;
@@ -114,29 +143,6 @@ section {
     grid-template-columns: repeat(3, 1fr); 
 }
 
-#projects {
-    display: flex;
-    flex-direction: column;
-
-    /**override section rule**/
-    height: 100vh; 
-    margin: 0; 
-    box-sizing: border-box; 
-}
-
-.project-scroll {
-    overflow-y: scroll; 
-
-    /**takes up leftover height after header**/
-    flex: 1; 
-
-    min-height: 0;
-}
-
-.project-scroll::-webkit-scrollbar {
-    display: none;
-}
-
 h1, h2 {
     font-family: 'Elsie Swash Caps', serif; 
     font-weight: 900; 
@@ -148,14 +154,17 @@ h1 {
 
 h2 {
     font-size: 4em;
+    margin-bottom: 1.5rem;
 }
 
 h4 {
     font-family: serif;
     font-size: 2.5em;
+    margin-bottom: 2.5rem; 
 }
 
 p {
     font-family: 'Jost', sans-serif;
     font-size: 1.25em;
+    margin-bottom: 2rem;
 }
