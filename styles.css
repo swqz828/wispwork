@@ -5,23 +5,23 @@
     margin: 0;
 }
 
+html {
+    overflow-y: scroll; 
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;    
+}
+
+html::-webkit-scrollbar {
+    display: none;
+    width: 0; 
+}
+
 body {
-    margin: 0%;
+    margin: 0;
     color: #f5f3f0;
     background-color: #070127;
-}
-
-body::-webkit-scrollbar {
-    display: none;
-}
-
-.content {
-    width: 80%; 
-    height: 100%; 
-    margin: 0 auto;
-
-    /**CHANGE LATER BECAUSE IT ONLY REALLY WORKS (PROPERLY) FOR A CERTAIN SCREEN SIZE**/
-    max-width: 2560px; 
 }
 
 section {
@@ -29,10 +29,68 @@ section {
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat;
+
+    scroll-snap-align: start;
+}
+
+.dropbutton {
+    width: 40px;
+    padding-bottom: 20px;
+    display: block;
+}
+
+.dropdown {
+    position: fixed; 
+    top: 2rem;
+    right: 2rem;
+    z-index: 999;
+
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute; 
+    right: 0; 
+    min-width: 100px; 
+    z-index: 1;
+    
+    font-size: 1.25em;
+}
+
+.dropdown-content a {
+    color: #f5f3f0; 
+    padding: 8px 0 8px 8px;
+    text-decoration: none;
+    display: block; 
+    text-align: right;
+}
+
+.dropdown-content a:hover {
+    color: #f5f3f0;
+    font-weight: bold;
+    font-size: 1.3em; 
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; 
+}
+
+.dropdown:hover .dropbutton {
+    filter: drop-shadow(0 0 12px #f5f3f0); /**offset-x, offset-y, blur-radius, color **/
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 0 #f5f3f0);
+    }
+    to {
+        filter: drop-shadow(0 0 12px #f5f3f0);
+    }
 }
 
 #landing {
-    background-image: url('placeholder-bg/landing.webp');
+    background-image: url('assets/placeholder-bg/landing.webp');
 
     position: relative; 
     overflow: hidden;
@@ -42,9 +100,16 @@ section {
     position: absolute; 
     bottom: 0; 
     width: 100%;
+    height: 100%; 
+    object-fit: cover;
 
     /**controls stacking order -- appears below most things (max: 1000)**/
     z-index: 1;
+}
+
+#moon {
+    /** name, duration, timing, iteration-count **/
+    animation: glow 2s ease-in-out infinite alternate;
 }
 
 #home, #about, #contact {
@@ -54,24 +119,15 @@ section {
 }
 
 #home {
-    background-image: url('placeholder-bg/home.webp');
-}
-
-.sticky-home {
-    position: fixed;
-    top: 2rem;
-    right: 2rem; 
-    left: unset; 
-    
-    z-index: 999;
+    background-image: url('assets/placeholder-bg/home.webp');
 }
 
 #about {
-    background-image: url('placeholder-bg/about.webp');
+    background-image: url('assets/placeholder-bg/about.webp');
 }
 
 #projects {
-    background-image: url('placeholder-bg/projects.webp');
+    background-image: url('assets/placeholder-bg/projects.webp');
 
     padding: 10% 0 5% 0;
 
@@ -84,11 +140,19 @@ section {
     box-sizing: border-box; 
 }
 
+.project-box {
+    margin: 0 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    row-gap: 2rem;
+}
+
 .project-scroll {
     overflow-y: scroll; 
 
     min-height: 0;
-
     /**takes up leftover height after header**/
     flex: 1; 
 }
@@ -97,27 +161,32 @@ section {
     display: none;
 }
 
+.project-box a {
+    text-decoration: none;
+    color: #f5f3f0;
+}
+
+.img-frame {
+    flex: 0 1 calc(33.333% - 1rem);
+    width: 450px;
+    height: 300px; 
+    overflow: hidden; 
+    border-radius: 25px;
+}
+
+.img-frame img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    display: block;
+}
+
 #contact {
-    background-image: url('placeholder-bg/contact.webp');
+    background-image: url('assets/placeholder-bg/contact.webp');
 }
 
-/**currently center is NOT used**/
-.center {
-    display: block; 
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.left {
-    display: block; 
-    margin-left: 0;
-    margin-right: auto;
-}
-
-.right {
-    display: block; 
-    margin-left: auto;
-    margin-right: 0;
+.icon:hover {
+    filter: drop-shadow(0 0 20px #f5f3f0); /**offset-x, offset-y, blur-radius, color **/
 }
 
 .two-column7 {
@@ -140,7 +209,26 @@ section {
 
 .three-by-three {
     display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 150px); 
+    grid-template-rows: repeat(3, 150px); 
+}
+
+.center {
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left {
+    display: block; 
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.right {
+    display: block; 
+    margin-left: auto;
+    margin-right: 0;
 }
 
 h1, h2 {

@@ -11,120 +11,136 @@
 
     </head>
     <body>
-        <main class="content">
-            <section id="landing">
-                <img src="assets/cloud-back-L.PNG">
-                <img src="assets/cloud-back-R.PNG">
-                <img src="assets/cloud-mid-L.PNG">
-                <img src="assets/cloud-mid-R.PNG">
-                <img src="assets/cloud-top-L.PNG">
-                <img src="assets/cloud-top-R.PNG"> 
-                <img src="assets/moon.png" style="width: 4%; height: auto; position: absolute; top: 20%; left: 50%; transform: translateX(-50%);">
-            </section>
+        <!--<section id="RANDOM ATTEMPTS">
             
-            <section id="home">
-                <a href="#home" class="sticky-home">
-                    <img src="assets/home-button.png" alt="home-button" title="home" style="width: 40px">
+        </section>-->
+
+        <div class="dropdown">
+            <img class="dropbutton" id="star-menu" src="assets/menu-button.png" alt="hover-menu">
+            <div class="dropdown-content">
+                <a href="#landing">landing</a>
+                <a href="#home">home</a>
+                <a href="#about">about</a>
+                <a href="#projects">projects</a>
+                <a href="#contact">contact</a>
+            </div>
+        </div>
+
+        <section id="landing">
+            <img src="assets/placeholders/cloud-back-L.PNG">
+            <img src="assets/placeholders/cloud-back-R.PNG">
+            <img src="assets/placeholders/cloud-mid-L.PNG">
+            <img src="assets/placeholders/cloud-mid-R.PNG">
+            <img src="assets/placeholders/cloud-top-L.PNG">
+            <img src="assets/placeholders/cloud-top-R.PNG"> 
+            <!--<img src="assets/stars.PNG">-->
+            <!--<img src="assets/constell-lines.PNG">-->
+            <img id="moon" src="assets/moon.png"> <!--style="width: 4%; height: auto; position: absolute; top: 20%; left: 50%; transform: translateX(-50%);"-->
+        </section>
+        
+        <section id="home">
+            <div class="two-column7">
+                <div>
+                    <img src="assets/wispwork.svg" alt="wispwork" style="width: 60%; height: auto;">
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <p>Dear visitor,</p>
+                    <p>Welcome to <em style="font-family: serif;"><strong>wispwork</strong></em> &mdash; a living collection of the projects I've made and the ideas I'm exploring.</p>
+                    <p>Hope you enjoy!</p>
+                    <img src="assets/signature2.png" style="width: 50%; height: auto;" alt="signed, selina zhai" class="right">  
+                </div>
+            </div>
+            
+        </section>
+
+        <section id="about">
+            <div class="two-column5">
+                <div class="left">
+                    <h2>about me</h2>
+                </div>
+                <div style="text-align: right;">
+                    <p>Hi! I'm Selina Zhai, a first-year computer engineering student at the University of Waterloo with a love for the intersection of art and technology. This portfolio is a collection of things I've explored — from stop-motion videos to UI/UX projects — and I'm always looking to add more to it.</p>
+                    
+                    <p>Over the upcoming months, I want to dive deeper into hardware because there's something so satisfying about making things with your hands and ending up with a tactile, physical result. I've dabbled in Arduino projects before and had a lot of fun, so I'm excited to see where this goes!</p>
+                    
+                    <p>In my free time you'll find me reading manga, crocheting, or getting a little too invested in legal dramas. I love trying new things — which honestly is what led me to most of the projects on this page — so be on the lookout for future random projects! Glad you're here, and I hope you enjoy looking around!</p>
+                </div>
+            </div>
+            
+            </section>
+
+        <section id="projects">
+            <div class="two-column7">
+                <div>
+                    <h2>projects</h2>
+                </div>
+                <div>
+                    <p>my explorations into code, design, and other creative endeavors</p>
+                </div>
+            </div>
+            
+            <div class="project-box project-scroll">
+                <a href="https://www.google.com" target="_blank">
+                    <div class="img-frame">
+                        <img src="assets/placeholder-bg/home.webp" alt="project thumbnail">
+                    </div>
+                    <h4>project name</h4>
                 </a>
+                <a href="https://www.google.com" target="_blank">
+                    <div class="img-frame">
+                        <img src="assets/placeholder-bg/landing.webp" alt="project thumbnail">
+                    </div>
+                    <h4>project name</h4>
+                </a>                    
+                <a href="https://www.google.com" target="_blank">
+                    <div class="img-frame">
+                        <img src="assets/placeholder-bg/contact.webp" alt="project thumbnail">
+                    </div>
+                    <h4>project name</h4>
+                </a>
+                <a href="https://www.google.com" target="_blank">
+                    <div class="img-frame">
+                        <img src="assets/placeholder-bg/about.webp" alt="project thumbnail">
+                    </div>
+                    <h4>project name</h4>
+                </a>
+            </div>
+        </section>
 
-                <div class="two-column7">
-                    <div>
-                        <img src="assets/wispwork.svg" alt="wispwork" style="width: 60%; height: auto;">
-                    </div>
-                    <div style="display: flex; flex-direction: column; justify-content: center;">
-                        <!-- I DONT LIKE THIS TOO MUCH ACTUALLY
-                            <h4>descr words thanks</h4>
-                        -->
-                        <p>Dear visitor,</p>
-                        <p>Welcome to <em style="font-family: serif;"><strong>wispwork</strong></em> &mdash; a living collection of the projects I've made and the ideas I'm exploring.</p>
-                        <p>Hope you enjoy!</p>
-                        <img src="assets/signature2.png" style="width: 50%; height: auto;" alt="signed, selina zhai" class="right">  
-                    </div>
+        <section id="contact">
+            <div class="two-column6">
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <h2>contact</h2>
+                    <p>Thanks for visiting!</p>
                 </div>
-                
-            </section>
-
-            <section id="about">
-                <div class="two-column5">
-                    <div class="left">
-                        <h2>about me</h2>
-                    </div>
-                    <div style="text-align: right;">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a scelerisque ex, eu elementum elit. Nunc sed felis vitae massa venenatis vulputate ut vel lorem. Mauris sagittis auctor elit ac dignissim. Etiam ullamcorper sapien vel nibh tempus lacinia. Quisque semper arcu in ipsum rhoncus tincidunt. Maecenas finibus urna ut ipsum accumsan vehicula. Nam finibus est augue, non viverra mi scelerisque at. Sed ultricies faucibus ligula. Integer fermentum sodales fermentum. Curabitur elementum massa id turpis blandit, auctor sodales ligula bibendum.</p>
-                    </div>
-                </div>
-                
-                </section>
-
-            <section id="projects">
-                <div class="two-column7">
-                    <div>
-                        <h2>projects</h2>
-                    </div>
-                    <div>
-                        <p>my explorations into code, design, and other creative endeavors; <br>feel free to explore!</p>
-                    </div>
-                </div>
-                
-                <div class="two-column5 project-scroll">
-                    <div class="left">
+                <div> 
+                    <div class="three-by-three">
+                        <div></div>
+                        <div></div>
                         <div>
-                            <img src="https://placehold.co/500x300" alt="project thumbnail">
-                            <h4>project name</h4>
+                            <a href="mailto:zhaiselina@gmail.com">
+                                <img class="icon" src="assets/email.png" alt="mail" title="email me!">
+                            </a>                                
                         </div>
                         <div>
-                            <img src="https://placehold.co/500x300" alt="project thumbnail">
-                            <h4>project name</h4>
-                        </div>                        
-                    </div>
-                    <div class="right">
-                        <div>
-                            <img src="https://placehold.co/500x300" alt="project thumbnail">
-                            <h4>project name</h4>
+                            <a href="https://www.linkedin.com/in/selina-zhai/" target="_blank">
+                                <img class="icon" src="assets/linkedin.png" alt="linkedin" title="check out my linkedin">
+                            </a>                                
                         </div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                         <div>
-                            <img src="https://placehold.co/500x300" alt="project thumbnail">
-                            <h4>project name</h4>
+                            <a href="https://github.com/swqz828" target="_blank">
+                                <img class="icon" src="assets/github.png" alt="github" title="browse my github projects">
+                            </a>                                
                         </div>
                     </div>
                 </div>
-                
-            </section>
+            </div>
+        </section>
 
-            <section id="contact">
-                <div class="two-column6">
-                    <div style="display: flex; flex-direction: column; justify-content: center;">
-                        <h2>contact</h2>
-                        <p>Thanks for visiting!</p>
-                    </div>
-                    <div> 
-                        <div class="three-by-three">
-                            <div></div>
-                            <div></div>
-                            <div>
-                                <a href="mailto:zhaiselina@gmail.com">
-                                    <img src=https://placehold.co/150 alt="mail" title="email me!">
-                                </a>                                
-                            </div>
-                            <div>
-                                <a href="https://www.linkedin.com/in/selina-zhai/" target="_blank">
-                                    <img src=https://placehold.co/150 alt="linkedin" title="check out my linkedin">
-                                </a>                                
-                            </div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div>
-                                <a href="https://github.com/swqz828" target="_blank">
-                                    <img src=https://placehold.co/150 alt="github" title="browse my github projects">
-                                </a>                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </section>
-        </main>
+        <script src="script.js"></script>
     </body>
 </html>
