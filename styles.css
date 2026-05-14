@@ -28,9 +28,11 @@ section {
     height: 100vh; 
     background-size: cover;
     background-position: center; 
-    background-repeat: no-repeat;
 
     scroll-snap-align: start;
+
+    background-size: 700px 700px, cover;
+    background-repeat: repeat, no-repeat;
 }
 
 .dropbutton {
@@ -90,7 +92,7 @@ section {
 }
 
 #landing {
-    background-image: url('assets/placeholder-bg/landing.webp');
+    background-image: url('assets/stars.svg'), url('assets/placeholder-bg/landing.webp');
 
     position: relative; 
     overflow: hidden;
@@ -119,15 +121,15 @@ section {
 }
 
 #home {
-    background-image: url('assets/placeholder-bg/home.webp');
+    background-image: url('assets/stars.svg'), linear-gradient(to bottom, #070127, #141A67);
 }
 
 #about {
-    background-image: url('assets/placeholder-bg/about.webp');
+    background-image: url('assets/stars.svg'), linear-gradient(to bottom, #141A67, #454F97);
 }
 
 #projects {
-    background-image: url('assets/placeholder-bg/projects.webp');
+    background-image: url('assets/stars.svg'), linear-gradient(to bottom, #454F97, #8495CF);
 
     padding: 10% 0 5% 0;
 
@@ -172,6 +174,7 @@ section {
     height: 300px; 
     overflow: hidden; 
     border-radius: 25px;
+    margin-bottom: 1rem;
 }
 
 .img-frame img {
@@ -181,8 +184,21 @@ section {
     display: block;
 }
 
+.wispwork-card {
+    background: linear-gradient(to bottom, #070127, #141A67);
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.wispwork-card img {
+    width: 60%; 
+    height: auto; 
+    object-fit: unset; /**overrides the "object-fit: cover" from earlier**/
+}
+
 #contact {
-    background-image: url('assets/placeholder-bg/contact.webp');
+    background-image: url('assets/stars.svg'), linear-gradient(to bottom, #8495CF, #5E7FCB);
 }
 
 .icon:hover {
