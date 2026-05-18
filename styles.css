@@ -1,3 +1,17 @@
+/**GENERAL, TEXT**/
+:root { /**storing custom css properties for easier updating, etc.**/
+    --stars: url('assets/stars.svg'); 
+    
+    /**palette**/
+    --warm-white: #f5f3f0; 
+    --denim: #5E7FCB; 
+    --light-denim: #8495CF; 
+    --dusty-navy: #454F97; 
+    --navy: #141A67; 
+    --darkest-navy: #070127; 
+    --faded-rose: #DEAAB7; 
+}
+
 * {
     letter-spacing: normal;
     word-spacing: normal;
@@ -5,11 +19,37 @@
     margin: 0;
 }
 
+h1, h2 {
+    font-family: 'Elsie Swash Caps', serif; 
+    font-weight: 900; 
+}
+
+h1 {
+    font-size: 8em;
+}
+
+h2 {
+    font-size: 4em;
+    margin-bottom: 1.5rem;
+}
+
+h4 {
+    font-family: serif;
+    font-size: 2.5em;
+    margin-bottom: 2.5rem; 
+}
+
+p {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.25em;
+    margin-bottom: 2rem;
+}
+
+/**HTML, BODY**/
 html {
     overflow-y: scroll; 
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
-
     scrollbar-width: none;    
 }
 
@@ -20,13 +60,11 @@ html::-webkit-scrollbar {
 
 body {
     margin: 0;
-    color: #f5f3f0;
-    background-color: #070127;
+    color: var(--warm-white);
 }
 
 section {
     height: 100vh; 
-    background-size: cover;
     background-position: center; 
 
     scroll-snap-align: start;
@@ -35,6 +73,12 @@ section {
     background-repeat: repeat, no-repeat;
 }
 
+.section-content {
+    position: relative;
+    z-index: 25;
+}
+
+/**SPECIFICS**/
 .dropbutton {
     width: 40px;
     padding-bottom: 20px;
@@ -45,9 +89,8 @@ section {
     position: fixed; 
     top: 2rem;
     right: 2rem;
-    z-index: 999;
-
-    display: inline-block;
+    z-index: 999; /**z-index stacking order, higher = closer to the top**/
+    display: inline-block; /**shrinks dropdown to button; "block" lets the dropdown content be anchored properly**/
 }
 
 .dropdown-content {
@@ -61,75 +104,88 @@ section {
 }
 
 .dropdown-content a {
-    color: #f5f3f0; 
+    color: var(--warm-white); 
     padding: 8px 0 8px 8px;
     text-decoration: none;
-    display: block; 
+    display: block; /**each link takes up full width of dropdown, so instead of a line --> column**/
     text-align: right;
 }
 
 .dropdown-content a:hover {
-    color: #f5f3f0;
     font-weight: bold;
     font-size: 1.3em; 
 }
 
 .dropdown:hover .dropdown-content {
-    display: block; 
+    display: block; /**makes dropdown content APPEAR on hover since originally NOT displayed (display: none;)**/
 }
 
 .dropdown:hover .dropbutton {
-    filter: drop-shadow(0 0 12px #f5f3f0); /**offset-x, offset-y, blur-radius, color **/
+    filter: drop-shadow(0 0 12px var(--warm-white)); /**offset-x, offset-y, blur-radius, color **/
 }
 
 @keyframes glow {
     from {
-        filter: drop-shadow(0 0 0 #f5f3f0);
+        filter: drop-shadow(0 0 0 var(--warm-white));
     }
     to {
-        filter: drop-shadow(0 0 12px #f5f3f0);
+        filter: drop-shadow(0 0 12px var(--warm-white));
     }
 }
 
-#landing {
-    background-image: url('assets/stars.svg'), url('assets/placeholder-bg/landing.webp');
+#clouds {
+    position: fixed; /**clouds container stays fixed as you scroll**/
+    inset: 0; /**top/right/bottom/left: 0**/
+    pointer-events: none; /**clicks go through the clouds**/
+    z-index: 10; 
+    overflow: hidden; 
+}
 
-    position: relative; 
+#clouds img {
+    position: absolute; /**takes out of normal document flow, anchored to #clouds**/
+    width: 100%;
+    height: auto; 
+
+    /**parallax setup: custom css properties updated by js**/
+    transform: translateY(var(--parallax-y, 0px)) translateX(var(--parallax-x, 0px)); /****/
+    transition: transform var(--cloud-transition, 0s); /**time it takes for clouds to glide on/offscreen**/
+}
+
+#landing {
+    background-image: var(--stars), url('assets/placeholder-bg/landing.webp'); /**stars svg: texture**/
+
+    position: relative; /**containing block so absolute-position images anchor to #landing**/
     overflow: hidden;
 }
 
 #landing img {
-    position: absolute; 
-    bottom: 0; 
+    position: absolute; /**anchors to relative #landing**/
+    bottom: -100px; 
     width: 100%;
-    height: 100%; 
-    object-fit: cover;
-
-    /**controls stacking order -- appears below most things (max: 1000)**/
+    height: auto; 
     z-index: 1;
 }
 
 #moon {
-    /** name, duration, timing, iteration-count **/
-    animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 2s ease-in-out infinite alternate; /** name, duration, timing, iteration-count **/
 }
 
 #home, #about, #contact {
-    display: flex;
+    display: flex; /**enables use of flexbox**/
     flex-direction: column;
     justify-content: center;    
 }
 
 #home {
-    background-image: url('assets/stars.svg'), linear-gradient(to bottom, #070127, #141A67);
+    background-image: var(--stars), linear-gradient(to bottom, var(--darkest-navy), var(--navy));
 }
 
 #about {
-    background-image: url('assets/stars.svg'), linear-gradient(to bottom, #141A67, #454F97);
+    background-image: var(--stars), linear-gradient(to bottom, var(--navy), var(--dusty-navy));
 }
 
 #projects {
-    background-image: url('assets/stars.svg'), linear-gradient(to bottom, #454F97, #8495CF);
+    background-image: var(--stars), linear-gradient(to bottom, var(--dusty-navy), var(--light-denim));
 
     padding: 10% 0 5% 0;
 
@@ -139,24 +195,31 @@ section {
     /**override section rule**/
     height: 100vh; 
     margin: 0; 
-    box-sizing: border-box; 
+    box-sizing: border-box; /**includes padding in height calculation**/
 }
 
 .project-box {
     margin: 0 10%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; 
+    flex-direction: row; 
+    flex-wrap: wrap; /**horizontal projects, wraps around if they don't fit**/
     justify-content: space-between;
     row-gap: 2rem;
 }
 
-.project-scroll {
+.project-scroll { /**independently-scrollable section**/
     overflow-y: scroll; 
-
     min-height: 0;
-    /**takes up leftover height after header**/
-    flex: 1; 
+    flex: 1; /**takes up leftover height after header**/
+
+    /**linear gradient at bottom of scrollable section**/
+    mask-image: linear-gradient(to bottom, black 90%, transparent); /**"black" meaning visible; percentage: point at which visibility changes**/
+    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent);
+}
+
+.project-scroll.scrolled { /**when scrolled, top gradient (symmetrical to bottom) becomes visible**/
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
 }
 
 .project-scroll::-webkit-scrollbar {
@@ -165,27 +228,27 @@ section {
 
 .project-box a {
     text-decoration: none;
-    color: #f5f3f0;
+    color: var(--warm-white);
 }
 
 .img-frame {
-    flex: 0 1 calc(33.333% - 1rem);
+    flex: 0 1 calc(33.333% - 1rem); /**each card takes up 1/3 of the row; cards won't grow but will shrink if needed**/
     width: 450px;
     height: 300px; 
     overflow: hidden; 
-    border-radius: 25px;
+    border-radius: 25px; /**rounded corners**/
     margin-bottom: 1rem;
 }
 
 .img-frame img {
     width: 100%; 
     height: 100%; 
-    object-fit: cover;
+    object-fit: cover; /**img fills entire frame without stretching**/
     display: block;
 }
 
 .wispwork-card {
-    background: linear-gradient(to bottom, #070127, #141A67);
+    background: linear-gradient(to bottom, var(--darkest-navy), var(--navy));
     display: flex; 
     align-items: center; 
     justify-content: center;
@@ -198,13 +261,54 @@ section {
 }
 
 #contact {
-    background-image: url('assets/stars.svg'), linear-gradient(to bottom, #8495CF, #5E7FCB);
+    background-image: var(--stars), linear-gradient(to bottom, var(--light-denim), var(--denim));
+    position: relative; 
+    overflow: hidden; 
+}
+
+#bottom-clouds {
+    position: absolute; 
+    inset: 0; 
+    pointer-events: none; 
+    overflow: hidden; 
+    z-index: 1;
+}
+
+#bottom-clouds img {
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    height: auto; 
+    animation: float 8s ease-in-out infinite alternate; 
+}
+
+.cloud-left {
+    left: 0;
+}
+
+.cloud-right {
+    right: 0;
+}
+
+.accents {
+    opacity: 0.25;
+    animation-delay: -4s;
+}
+
+@keyframes float { /**gentle floating animation to add movement**/
+    0% {
+        transform: translateY(0px); 
+    }
+    100% {
+        transform: translateY(25px);
+    }
 }
 
 .icon:hover {
-    filter: drop-shadow(0 0 20px #f5f3f0); /**offset-x, offset-y, blur-radius, color **/
+    filter: drop-shadow(0 0 20px var(--warm-white)); /**offset-x, offset-y, blur-radius, color **/
 }
 
+/**ALIGNMENTS AND COLUMNS**/
 .two-column7 {
     margin: 0 10%;
     display: grid; 
@@ -245,30 +349,4 @@ section {
     display: block; 
     margin-left: auto;
     margin-right: 0;
-}
-
-h1, h2 {
-    font-family: 'Elsie Swash Caps', serif; 
-    font-weight: 900; 
-}
-
-h1 {
-    font-size: 8em;
-}
-
-h2 {
-    font-size: 4em;
-    margin-bottom: 1.5rem;
-}
-
-h4 {
-    font-family: serif;
-    font-size: 2.5em;
-    margin-bottom: 2.5rem; 
-}
-
-p {
-    font-family: 'Jost', sans-serif;
-    font-size: 1.25em;
-    margin-bottom: 2rem;
 }

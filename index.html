@@ -8,13 +8,9 @@
         <link rel="icon" href="assets/logo.png" />
         <link rel="stylesheet" href="styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@400;900&family=Jost:wght@300;400;600&family=Katibeh&display=swap" rel="stylesheet">
-
     </head>
     <body>
-        <!--<section id="RANDOM ATTEMPTS">
-            
-        </section>-->
-
+        <!--dropdown for navigation links; pages appear on hover-->
         <div class="dropdown">
             <img class="dropbutton" id="star-menu" src="assets/menu-button.png" alt="hover-menu">
             <div class="dropdown-content">
@@ -26,56 +22,64 @@
             </div>
         </div>
 
-        <section id="landing">
+        <!--clouds in a separate div to set apart from the rest of the content-->
+        <div id="clouds"> <!--placeholders; better illustrated assets to be added-->
             <img src="assets/placeholders/cloud-back-L.PNG">
             <img src="assets/placeholders/cloud-back-R.PNG">
             <img src="assets/placeholders/cloud-mid-L.PNG">
             <img src="assets/placeholders/cloud-mid-R.PNG">
             <img src="assets/placeholders/cloud-top-L.PNG">
-            <img src="assets/placeholders/cloud-top-R.PNG"> 
-            <!--<img src="assets/stars.PNG">-->
-            <!--<img src="assets/constell-lines.PNG">-->
-            <img id="moon" src="assets/moon.png"> <!--style="width: 4%; height: auto; position: absolute; top: 20%; left: 50%; transform: translateX(-50%);"-->
+            <img src="assets/placeholders/cloud-top-R.PNG">             
+        </div>
+
+        <section id="landing">
+            <img id="moon" src="assets/moon.png">
         </section>
         
         <section id="home">
-            <div class="two-column7">
-                <div>
-                    <img src="assets/wispwork.svg" alt="wispwork" style="width: 60%; height: auto;">
-                </div>
-                <div style="display: flex; flex-direction: column; justify-content: center;">
-                    <p>Dear visitor,</p>
-                    <p>Welcome to <em style="font-family: serif;"><strong>wispwork</strong></em> &mdash; a living collection of the projects I've made and the ideas I'm exploring.</p>
-                    <p>Hope you enjoy!</p>
-                    <img src="assets/signature2.png" style="width: 50%; height: auto;" alt="signed, selina zhai" class="right">  
+            <!--content div to make sure written content appears above clouds and cloud animations-->
+            <div class="section-content">
+                <div class="two-column7">
+                    <div>
+                        <img src="assets/wispwork.svg" alt="wispwork" style="width: 60%; height: auto;">
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column; justify-content: center;">
+                        <p>Dear visitor,</p>
+                        <p>Welcome to <em style="font-family: serif;"><strong>wispwork</strong></em> &mdash; a living collection of the projects I've made and the ideas I'm exploring.</p>
+                        <p>Hope you enjoy!</p>
+                        <img src="assets/signature.png" style="width: 75%; height: auto;" alt="signed, selina zhai" class="right">  
+                    </div>
                 </div>
             </div>
-            
         </section>
 
         <section id="about">
-            <div class="two-column5">
-                <div class="left">
-                    <h2>about me</h2>
-                </div>
-                <div style="text-align: right;">
-                    <p>Hi! I'm Selina Zhai, a first-year computer engineering student at the University of Waterloo with a love for the intersection of art and technology. This portfolio is a collection of things I've explored — from stop-motion videos to UI/UX projects — and I'm always looking to add more to it.</p>
-                    
-                    <p>Over the upcoming months, I want to dive deeper into hardware because there's something so satisfying about making things with your hands and ending up with a tactile, physical result. I've dabbled in Arduino projects before and had a lot of fun, so I'm excited to see where this goes!</p>
-                    
-                    <p>In my free time you'll find me reading manga, crocheting, or getting a little too invested in legal dramas. I love trying new things — which honestly is what led me to most of the projects on this page — so be on the lookout for future random projects! Glad you're here, and I hope you enjoy looking around!</p>
+            <div class="section-content">
+                <div class="two-column5">
+                    <div class="left">
+                        <h2>about me</h2>
+                    </div>
+
+                    <div style="text-align: right;">
+                        <p>Hi! I'm Selina Zhai, a first-year computer engineering student at the University of Waterloo with a love for the intersection of art and technology. This portfolio is a collection of things I've explored — from stop-motion videos to UI/UX projects — and I'm always looking to add more to it.</p>
+                        
+                        <p>Over the upcoming months, I want to dive deeper into hardware, because there's something so satisfying about making things with your hands and ending up with a tactile, physical result. I've dabbled in Arduino projects before and had a lot of fun, so I'm excited to see where this goes!</p>
+                        
+                        <p>In my free time you'll find me reading manga, crocheting, or getting a little too invested in legal dramas. I love trying new things — which honestly is what led me to most of the projects on this page — so be on the lookout for future random projects! Glad you're here, and I hope you enjoy looking around!</p>
+                    </div>
                 </div>
             </div>
-            
-            </section>
+        </section>
 
         <section id="projects">
             <div class="two-column7">
                 <div>
                     <h2>projects</h2>
                 </div>
+
                 <div>
-                    <p>my explorations into code, design, and other creative endeavors</p>
+                    <p>Take a look at my explorations into code, design, and other creative endeavors!</p>
                 </div>
             </div>
             
@@ -86,18 +90,21 @@
                     </div>
                     <h4>wispwork</h4>
                 </a>
+                
                 <a href="https://www.figma.com/proto/TnKfi3vHMEMnFxaYy5TeNc/Protothon-2026-Design-File?page-id=0%3A1&node-id=89-1211&p=f&viewport=347%2C87%2C0.08&t=Hh6qp24PVg3h3sUT-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=132%3A1541&show-proto-sidebar=1" target="_blank">
                     <div class="img-frame">
                         <img src="assets/constell.png" alt="constell thumbnail">
                     </div>
                     <h4>Constell</h4>
-                </a>                    
+                </a>
+
                 <a href="https://drive.google.com/file/d/1gu8AVbSDuPHUp9mSJ7cabjxvF_j5K9hY/view?usp=drive_link" target="_blank">
                     <div class="img-frame">
                         <img src="assets/paper-cranes.png" alt="paper cranes thumbnail" style="height: 120%; width: auto;">
                     </div>
                     <h4>Paper Cranes</h4>
                 </a>
+                
                 <a href="https://docs.google.com/document/d/1DjAdoKcySpJcq-0V7NqdQ6ZD92IdnKGwHJMeXiFV6_s/edit?usp=sharing" target="_blank">
                     <div class="img-frame">
                         <img src="assets/productivity-alarm.png" alt="productivity alarm thumbnail">
@@ -108,36 +115,48 @@
         </section>
 
         <section id="contact">
-            <div class="two-column6">
-                <div style="display: flex; flex-direction: column; justify-content: center;">
-                    <h2>contact</h2>
-                    <p>Thanks for visiting!</p>
-                </div>
-                <div> 
-                    <div class="three-by-three">
-                        <div></div>
-                        <div></div>
-                        <div>
-                            <a href="mailto:zhaiselina@gmail.com">
-                                <img class="icon" src="assets/email.png" alt="mail" title="email me!">
-                            </a>                                
-                        </div>
-                        <div>
-                            <a href="https://www.linkedin.com/in/selina-zhai/" target="_blank">
-                                <img class="icon" src="assets/linkedin.png" alt="linkedin" title="check out my linkedin">
-                            </a>                                
-                        </div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div>
-                            <a href="https://github.com/swqz828" target="_blank">
-                                <img class="icon" src="assets/github.png" alt="github" title="browse my github projects">
-                            </a>                                
+            <!--different div name because these clouds are styled differently from the parallax ones above-->         
+            <div id="bottom-clouds"> 
+                <img class="cloud-left" src="assets/placeholders/cloud-contact-L.PNG">
+                <img class="cloud-right" src="assets/placeholders/cloud-contact-R.PNG"> 
+                <img class="accents" src="assets/placeholders/cloud-contact-sL.PNG" style="bottom: -60px;">
+                <img class="accents" src="assets/placeholders/cloud-contact-sR.PNG" style="bottom: -60px;">
+            </div>
+            
+            <div class="section-content">
+                <div class="two-column6">
+                    <div style="display: flex; flex-direction: column; justify-content: center;">
+                        <h2>contact</h2>
+                        <p>Thanks for visiting!</p>
+                    </div>
+
+                    <!--grid to arrange the 3 contact bubbles in a triangle-->
+                    <div> 
+                        <div class="three-by-three">
+                            <div></div>
+                            <div></div>
+                            <div>
+                                <a href="mailto:zhaiselina@gmail.com">
+                                    <img class="icon" src="assets/email.png" alt="mail" title="email me!">
+                                </a>                                
+                            </div>
+                            <div>
+                                <a href="https://www.linkedin.com/in/selina-zhai/" target="_blank">
+                                    <img class="icon" src="assets/linkedin.png" alt="linkedin" title="check out my linkedin">
+                                </a>                                
+                            </div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div>
+                                <a href="https://github.com/swqz828" target="_blank">
+                                    <img class="icon" src="assets/github.png" alt="github" title="browse my github projects">
+                                </a>                                
+                            </div>
                         </div>
                     </div>
-                </div>
+                </div>                
             </div>
         </section>
 
